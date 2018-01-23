@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <title>Follow Along Nav</title>
 </head>
 
 <body>
-  <h2>Cool</h2>
   <nav class="top">
     <div class="dropdownBackground">
       <span class="arrow"></span>
@@ -83,9 +81,7 @@
       font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif
     }
 
-    *,
-    *:before,
-    *:after {
+    *, *:before, *:after {
       box-sizing: inherit;
     }
 
@@ -98,17 +94,12 @@
       linear-gradient(315deg, hsla(35, 95%, 55%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);
     }
 
-    h2 {
-      margin-top: 0;
-      padding-top: .8em;
-    }
-
     nav {
       position: relative;
       perspective: 600px;
     }
 
-    .cool>li>a {
+    .cool > li > a {
       color: yellow;
       text-decoration: none;
       font-size: 20px;
@@ -127,7 +118,7 @@
       justify-content: center;
     }
 
-    .cool>li {
+    .cool > li {
       position: relative;
       display: flex;
       justify-content: center;
@@ -222,23 +213,16 @@
 
     /* Matches Twitter, TWITTER, twitter, tWitter, TWiTTeR... */
 
-    .button[href*=twitter] {
-      background: #019FE9;
-    }
+    .button[href*=twitter] { background: #019FE9; }
+    .button[href*=facebook] { background: #3B5998; }
+    .button[href*=courses] { background: #ffc600; }
 
-    .button[href*=facebook] {
-      background: #3B5998;
-    }
-
-    .button[href*=courses] {
-      background: #ffc600;
-    }
   </style>
 
   <script>
     const triggers = document.querySelectorAll('.cool > li');
-    const background = document.querySelectorAll('.dropdownBackground');
-    const nav = document.querySelectorAll('.top');
+    const background = document.querySelector('.dropdownBackground');
+    const nav = document.querySelector('.top');
 
     function handleEnter() {
       // console.log('Enter!');
@@ -262,7 +246,7 @@
 
       background.style.setProperty('height', `${coords.height}px`);
       background.style.setProperty('width', `${coords.width}px`);
-      background.style.setProperty('transform', `translate(${coords.top}px, ${coords.left}px)`);
+      background.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
     }
 
     function handleLeave() {
@@ -279,3 +263,4 @@
 </body>
 
 </html>
+
